@@ -34,9 +34,11 @@ services:
 
     stun:
             restart: unless-stopped
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/stun:2001"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:2"
             runtime: runsc-kvm
             mem_limit: 256m
+            volumes:
+                     - "/docker/turnserver/turnserver.conf:/etc/turnserver.conf"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.150
