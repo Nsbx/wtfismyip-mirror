@@ -46,7 +46,7 @@ services:
                     - "3478:3478/udp"
     redis:
             restart: unless-stopped
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/redis:2001"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-redis:1"
             runtime: runsc-kvm
             mem_limit: 256m
             networks:
