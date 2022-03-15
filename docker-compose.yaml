@@ -10,7 +10,7 @@ services:
                     - "/lib/modules:/lib/modules:ro"
     unbound:
             restart: unless-stopped
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:5"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:6"
             runtime: runsc-kvm
             mem_limit: 4g
             networks:
@@ -22,7 +22,7 @@ services:
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:2.0.28"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:2.0.33"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
