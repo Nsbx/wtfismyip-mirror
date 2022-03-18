@@ -1,0 +1,9 @@
+PING ipv6.wtfismyip.com(2a01:4f9:4b:4c8f::2 (2a01:4f9:4b:4c8f::2)) 56 data bytes
+64 bytes from 2a01:4f9:4b:4c8f::2 (2a01:4f9:4b:4c8f::2): icmp_seq=2 ttl=49 time=119 ms
+64 bytes from 2a01:4f9:4b:4c8f::2 (2a01:4f9:4b:4c8f::2): icmp_seq=3 ttl=49 time=119 ms
+64 bytes from 2a01:4f9:4b:4c8f::2 (2a01:4f9:4b:4c8f::2): icmp_seq=4 ttl=49 time=119 ms
+64 bytes from 2a01:4f9:4b:4c8f::2 (2a01:4f9:4b:4c8f::2): icmp_seq=5 ttl=49 time=119 ms
+
+--- ipv6.wtfismyip.com ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 4943ms
+rtt min/avg/max/mdev = 119.002/119.020/119.049/0.018 ms
