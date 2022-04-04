@@ -51,6 +51,8 @@ type wtfResponse struct {
 	Myipwtf     bool
 }
 
+var ctx2 = context.TODO()
+
 var ctx = context.Background()
 
 var rdb *redis.Client
@@ -181,7 +183,7 @@ func main() {
 
 	config := certmagic.NewDefault()
 	tags := []string{}
-	config.CacheUnmanagedCertificatePEMFile("/docker/certs/wtf.cert.pem", "/docker/certs/wtf.key.pem", tags)
+	config.CacheUnmanagedCertificatePEMFile(ctx2, "/docker/certs/wtf.cert.pem", "/docker/certs/wtf.key.pem", tags)
 	tlsConfig := config.TLSConfig()
 
 	srvHTTPS := &http.Server{
