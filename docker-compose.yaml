@@ -11,7 +11,7 @@ services:
     unbound:
             restart: unless-stopped
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:9"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:10"
             volumes:
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
             mem_limit: 4g
@@ -25,7 +25,7 @@ services:
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:2.0.51"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:2.0.53"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
@@ -38,7 +38,7 @@ services:
     stun:
             restart: unless-stopped
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:3"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:4"
             mem_limit: 256m
             volumes:
                     - "/docker/turnserver/turnserver.conf:/etc/turnserver.conf"
@@ -50,7 +50,7 @@ services:
     redis:
             restart: unless-stopped
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-redis:2"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-redis:3"
             mem_limit: 256m
             networks:
                     omgwtfbbq:
