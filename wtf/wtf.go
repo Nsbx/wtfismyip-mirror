@@ -28,6 +28,7 @@ var cityReader *geoip2.Reader
 var orgReader *geoip2.Reader
 var templateHTML *template.Template
 var templateJSON *template.Template
+var templateYAML *template.Template
 var templateXML *template.Template
 var templateClean *template.Template
 
@@ -94,6 +95,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	templateYAML, err = template.ParseFiles("/usr/local/wtf/static/yaml.template")
+	if err != nil {
+		log.Fatal(err)
+	}
 	templateXML, err = template.ParseFiles("/usr/local/wtf/static/xml.template")
 	if err != nil {
 		log.Fatal(err)
@@ -145,6 +150,7 @@ func main() {
 	r.HandleFunc("/headers", headers)
 	r.HandleFunc("/test", test)
 	r.HandleFunc("/json", json)
+	r.HandleFunc("/yaml", yaml)
 	r.HandleFunc("/xml", xml)
 	r.HandleFunc("/text", text)
 	r.HandleFunc("/text/isp", textisp)
@@ -393,6 +399,19 @@ func json(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
 	templateJSON.Execute(w, resp)
+}
+
+func yaml(w http.ResponseWriter, r *http.Request) {
+	add := getAddress(r)
+	hostname := reverseDNS(add)
+	geo := geoData(add)
+	isIPv6 := strings.Contains(add, ":")
+	isTor := isTorExit(add)
+	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false}
+	w.Header().Set("Content-Type", "text/yaml")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	templateYAML.Execute(w, resp)
 }
 
 func text(w http.ResponseWriter, r *http.Request) {
