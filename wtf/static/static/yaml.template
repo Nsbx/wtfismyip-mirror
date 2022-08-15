@@ -1,0 +1,6 @@
+YourFuckingIPAddress: "{{.Address}}"
+YourFuckingLocation: "{{.Geo}}"
+YourFuckingHostname: "{{.Hostname}}"
+YourFuckingISP: "{{.ISP}}"
+YourFuckingTorExit: {{.Tor}}
+YourFuckingCountryCode: "{{.CountryCode}}"
