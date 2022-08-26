@@ -22,6 +22,10 @@ Just like /json but fucking worse (read about it [here](https://en.wikipedia.org
 
 Gives you just your IP in plain fucking text.
 
+`/yaml`
+
+YAML, because why the fuck not?
+
 `/why`
 
 Tells you why the fuck we do what we do.
