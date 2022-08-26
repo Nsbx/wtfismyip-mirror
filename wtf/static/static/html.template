@@ -102,7 +102,7 @@ a:link,a:visited,#tor{color:#f30}
             <p class="blah"><a href="/privacy">Our Fucking Privacy Policy</a></p>
          </li>
          <li>
-            <p class="blah"><a href="https://gitlab.com/wtfismyip/wtfismyip">Our Fucking GitLab</a></p>
+            <p class="blah"><a href="https://gitlab.wtfismyip.com/wtfismyip/wtfismyip">Our Fucking GitLab</a></p>
          </li>
          <li>
             <p class="blah"><a href="/donate">Just Fucking Donate Already</a></p>

@@ -102,7 +102,7 @@ a:link,a:visited,#tor{color:#f30}
             <p class="blah"><a href="/privacy">Our Privacy Policy</a></p>
          </li>
          <li>
-            <p class="blah"><a href="https://gitlab.com/wtfismyip/wtfismyip">Our GitLab</a></p>
+            <p class="blah"><a href="https://gitlab.wtfismyip.com/wtfismyip/wtfismyip">Our GitLab</a></p>
          </li>
          <li>
             <p class="blah"><a href="/donate">Just Donate Already</a></p>
