@@ -11,7 +11,7 @@ services:
     unbound:
             restart: unless-stopped
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:11"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:12"
             volumes:
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
             mem_limit: 4g

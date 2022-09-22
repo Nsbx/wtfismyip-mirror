@@ -5,6 +5,3 @@ Disallow: /jabber/register
 Disallow: /jabber/verify
 Disallow: /jabber/privacy
 Disallow: /m
-
-User-agent: ia_archiver
-Disallow: /
