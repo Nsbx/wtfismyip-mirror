@@ -166,6 +166,7 @@ func main() {
 	r.HandleFunc("/church", cleanHandle)
 	r.HandleFunc("/traffic", trafficHandle)
 	r.HandleFunc("/omgwtfbbq.png", trafficPngHandle)
+	r.HandleFunc("/.git/config", gitconfigHandle)
 	r.HandleFunc("/", wtfHandle).Methods("GET")
 	r.HandleFunc("/", miscHandle).Methods("POST")
 	r.HandleFunc("/", miscHandle).Methods("PUT")
@@ -571,6 +572,11 @@ func ipv5Handler(w http.ResponseWriter, r *http.Request) {
 
 func trafficHandle(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<html><head><img src=\"/omgwtfbbq.png\" style=\"width: 100%; object-fit: contain\"></head></html>")
+}
+
+func gitconfigHandle(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain")
+	fmt.Fprintf(w, "[user]\n\tname = wtfismyip\n\temail = wtfismyip@nsa.gov\n\n[github]\n\tuser = wtfismyip\n\ttoken = lmfaotrolololo")
 }
 
 func trafficPngHandle(w http.ResponseWriter, r *http.Request) {
