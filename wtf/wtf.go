@@ -167,6 +167,8 @@ func main() {
 	r.HandleFunc("/traffic", trafficHandle)
 	r.HandleFunc("/omgwtfbbq.png", trafficPngHandle)
 	r.HandleFunc("/.git/config", gitconfigHandle)
+	r.HandleFunc("/_ignition/health-check/}", healthHandle)
+	r.HandleFunc("/public/_ignition/health-check/}", healthHandle)
 	r.HandleFunc("/", wtfHandle).Methods("GET")
 	r.HandleFunc("/", miscHandle).Methods("POST")
 	r.HandleFunc("/", miscHandle).Methods("PUT")
@@ -568,6 +570,11 @@ func headers(w http.ResponseWriter, r *http.Request) {
 func ipv5Handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain")
 	fmt.Fprintf(w, "No such fucking protocol")
+}
+
+func healthHandle(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain")
+	fmt.Fprintf(w, "I am healthy, motherfucker!")
 }
 
 func trafficHandle(w http.ResponseWriter, r *http.Request) {
