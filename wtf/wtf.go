@@ -146,6 +146,7 @@ func main() {
 	r.Host("ipv6.xml.wtfismyip.com").HandlerFunc(xml)
 	r.Host("ipv6.xml.myip.wtf").HandlerFunc(xml)
 	r.Host("xml.ipv6.wtfismyip.com").HandlerFunc(xml)
+	r.Host("xml.ipv6.myip.wtf").HandlerFunc(xml)
 	r.Host("clean.wtfismyip.com").HandlerFunc(cleanHandle)
 	r.HandleFunc("/clean", cleanHandle)
 	r.HandleFunc("/headers", headers)
