@@ -1,9 +1,11 @@
-@	86400	IN	A	95.217.228.176
-@	86400	IN	AAAA	2a01:4f9:4b:4c8f::2
-@	21600	IN	NS	gns21.cloudns.net.
-@	21600	IN	NS	gns22.cloudns.net.
-@	21600	IN	NS	gns23.cloudns.net.
-@	21600	IN	NS	gns24.cloudns.net.
+$ORIGIN myip.wtf.
+@	3600	IN	SOA	dns41.cloudns.net. support.cloudns.net. 2022101512 7200 1800 1209600 3600
+@	3600	IN	NS	dns41.cloudns.net.
+@	3600	IN	NS	dns42.cloudns.net.
+@	3600	IN	NS	dns43.cloudns.net.
+@	3600	IN	NS	dns44.cloudns.net.
+@	60	IN	A	95.217.228.176
+@	60	IN	AAAA	2a01:4f9:4b:4c8f::2
 xml	86400	IN	CNAME	wtfismyip.com.
 ipv4	86400	IN	CNAME	ipv4.wtfismyip.com.
 ipv6	86400	IN	CNAME	ipv6.wtfismyip.com.
@@ -18,7 +20,9 @@ xml.ipv4	86400	IN	CNAME	ipv4.wtfismyip.com.
 json.ipv6	86400	IN	CNAME	ipv6.wtfismyip.com.
 text.ipv6	86400	IN	CNAME	ipv6.wtfismyip.com.
 xml.ipv6	86400	IN	CNAME	ipv6.wtfismyip.com.
+_acme-challenge.ipv6	60	IN	TXT	"-7m4rR14eLajFDHyoek_hwwnmvtoqgvRLlSMeYZQscU"
 ipv4.json	86400	IN	CNAME	ipv4.wtfismyip.com.
 ipv6.json	86400	IN	CNAME	ipv6.wtfismyip.com.
 ipv4.text	86400	IN	CNAME	ipv4.wtfismyip.com.
 ipv6.text	86400	IN	CNAME	ipv6.wtfismyip.com.
+signal	3600	IN	A	63.141.246.38
