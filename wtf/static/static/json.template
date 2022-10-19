@@ -4,6 +4,6 @@
     "YourFuckingHostname": "{{.Hostname}}",
     "YourFuckingISP": "{{.ISP}}",
     "YourFuckingTorExit": {{.Tor}},
-    "YourFuckingCity": {{.City}},
+    "YourFuckingCity": "{{.City}}",
     "YourFuckingCountryCode": "{{.CountryCode}}"
 }
