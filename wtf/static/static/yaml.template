@@ -3,4 +3,5 @@ YourFuckingLocation: "{{.Geo}}"
 YourFuckingHostname: "{{.Hostname}}"
 YourFuckingISP: "{{.ISP}}"
 YourFuckingTorExit: {{.Tor}}
+YourFuckingCity: {{.City}}
 YourFuckingCountryCode: "{{.CountryCode}}"
