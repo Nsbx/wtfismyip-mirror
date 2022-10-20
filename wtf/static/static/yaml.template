@@ -3,6 +3,6 @@ YourFuckingLocation: "{{.Geo}}"
 YourFuckingHostname: "{{.Hostname}}"
 YourFuckingISP: "{{.ISP}}"
 YourFuckingTorExit: {{.Tor}}
-YourFuckingCity: {{.City}}
-YourFuckingCountry: {{.Country}}
+YourFuckingCity: "{{.City}}"
+YourFuckingCountry: "{{.Country}}"
 YourFuckingCountryCode: "{{.CountryCode}}"
