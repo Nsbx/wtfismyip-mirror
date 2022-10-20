@@ -51,6 +51,7 @@ type wtfResponse struct {
 	Tor         bool
 	Myipwtf     bool
 	City        string
+	Country     string
 }
 
 var ctx2 = context.TODO()
@@ -400,7 +401,7 @@ func json(w http.ResponseWriter, r *http.Request) {
 	geo := geoData(add)
 	isIPv6 := strings.Contains(add, ":")
 	isTor := isTorExit(add)
-	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city}
+	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city, geo.country}
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
@@ -413,7 +414,7 @@ func yaml(w http.ResponseWriter, r *http.Request) {
 	geo := geoData(add)
 	isIPv6 := strings.Contains(add, ":")
 	isTor := isTorExit(add)
-	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city}
+	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city, geo.country}
 	w.Header().Set("Content-Type", "text/yaml")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
@@ -510,7 +511,7 @@ func xml(w http.ResponseWriter, r *http.Request) {
 	geo := geoData(add)
 	isIPv6 := strings.Contains(add, ":")
 	isTor := isTorExit(add)
-	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city}
+	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city, geo.country}
 	w.Header().Set("Content-Type", "application/xml")
 	templateXML.Execute(w, resp)
 }
@@ -521,7 +522,7 @@ func cleanHandle(w http.ResponseWriter, r *http.Request) {
 	hostname := reverseDNS(add)
 	geo := geoData(add)
 	isTor := isTorExit(add)
-	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city}
+	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city, geo.country}
 	templateClean.Execute(w, resp)
 }
 
@@ -535,7 +536,7 @@ func wtfHandle(w http.ResponseWriter, r *http.Request) {
 	if r.Host == "myip.wtf" {
 		myipwtf = true
 	}
-	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, myipwtf, geo.city}
+	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, myipwtf, geo.city, geo.country}
 	if r.TLS == nil {
 		if myipwtf {
 			http.Redirect(w, r, "https://myip.wtf/", 301)
