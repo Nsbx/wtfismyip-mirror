@@ -11,8 +11,10 @@ services:
     unbound:
             restart: unless-stopped
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:12"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:1"
+            #image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:14"
             volumes:
+                    - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
             mem_limit: 8g
             networks:
@@ -25,7 +27,7 @@ services:
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:3.2.13"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:3.2.15"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
