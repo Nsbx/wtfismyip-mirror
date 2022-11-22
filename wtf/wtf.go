@@ -170,6 +170,7 @@ func main() {
 	r.HandleFunc("/church", cleanHandle)
 	r.HandleFunc("/traffic", trafficHandle)
 	r.HandleFunc("/omgwtfbbq.png", trafficPngHandle)
+	r.HandleFunc("/wtf.png", latencyPngHandle)
 	r.HandleFunc("/.git/config", gitconfigHandle)
 	r.HandleFunc("/_ignition/health-check/}", healthHandle)
 	r.HandleFunc("/public/_ignition/health-check/}", healthHandle)
@@ -592,6 +593,16 @@ func gitconfigHandle(w http.ResponseWriter, r *http.Request) {
 
 func trafficPngHandle(w http.ResponseWriter, r *http.Request) {
 	content, err := ioutil.ReadFile("/usr/local/tmp/omgwtfbbq.png")
+	if err != nil {
+		w.Header().Set("Content-Type", "text/plain")
+		fmt.Fprintf(w, "Fucking Error: %s", err)
+	}
+	w.Header().Set("Content-Type", "image/png")
+	w.Write([]byte(content))
+}
+
+func latencyPngHandle(w http.ResponseWriter, r *http.Request) {
+	content, err := ioutil.ReadFile("/usr/local/tmp/wtf.png")
 	if err != nil {
 		w.Header().Set("Content-Type", "text/plain")
 		fmt.Fprintf(w, "Fucking Error: %s", err)
