@@ -583,7 +583,7 @@ func healthHandle(w http.ResponseWriter, r *http.Request) {
 }
 
 func trafficHandle(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<html><head><img src=\"/omgwtfbbq.png\" style=\"width: 100%; object-fit: contain\"></head></html>")
+	fmt.Fprintf(w, "<html><head><img src=\"/omgwtfbbq.png\" style=\"width: 100%; object-fit: contain\"><p><img src=\"/wtf.png\" style=\"width: 100%; object-fit: contain\"></head></html>")
 }
 
 func gitconfigHandle(w http.ResponseWriter, r *http.Request) {
