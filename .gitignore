@@ -2,3 +2,4 @@ wtf/static/GeoIP/*
 nginx/nginx/certs/*
 wtf/docker/*
 docker-compose.yaml
+debian-bind/rndc.key
