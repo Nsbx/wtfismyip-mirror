@@ -41,6 +41,7 @@
       #main p {
         margin: 20px;
         font-size: 15px;
+        font-family: monospace;
         line-height: 20px;
       }
       #main ul {
