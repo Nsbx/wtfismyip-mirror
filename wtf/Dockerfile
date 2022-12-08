@@ -1,4 +1,4 @@
-FROM golang:1.19.4 as builder
+FROM golang:1.20rc1-alpine as builder
 
 MAINTAINER Clint Ruoho clint@wtfismyip.com
 
