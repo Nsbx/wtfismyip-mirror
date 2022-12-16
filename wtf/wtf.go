@@ -190,6 +190,7 @@ func main() {
 	r.HandleFunc("/{foo:.*zip$}", zipHandle)
 	r.HandleFunc("/{foo:.*gz$}", gzHandle)
 	r.HandleFunc("/{foo:.*ini$}", iniHandle)
+	r.HandleFunc("/{foo:.*env$}", envHandle)
 	r.HandleFunc("/{foo:.*php$}", trollHandle)
 	r.HandleFunc("/{foo:.*asp$}", trollHandle)
 	r.HandleFunc("/{foo:.*aspx$}", trollHandle)
@@ -361,6 +362,16 @@ func gzHandle(w http.ResponseWriter, r *http.Request) {
 
 func iniHandle(w http.ResponseWriter, r *http.Request) {
 	contents, err := ioutil.ReadFile("/usr/local/wtf/static/evil.ini")
+	if err != nil {
+		w.WriteHeader(http.StatusNotFound)
+		fmt.Fprintf(w, "No such fucking page!")
+	}
+	w.Header().Set("Content-Type", "text/plain")
+	w.Write(contents)
+}
+
+func envHandle(w http.ResponseWriter, r *http.Request) {
+	contents, err := ioutil.ReadFile("/usr/local/wtf/static/.env")
 	if err != nil {
 		w.WriteHeader(http.StatusNotFound)
 		fmt.Fprintf(w, "No such fucking page!")
