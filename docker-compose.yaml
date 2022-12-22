@@ -11,7 +11,7 @@ services:
     unbound:
             restart: unless-stopped
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:2"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:3"
             #image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:14"
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
@@ -27,7 +27,7 @@ services:
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:3.2.25"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:3.2.26"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
