@@ -285,7 +285,7 @@ func reverseDNS(ip string) (response string) {
 	select {
 	case response = <-omfg:
 		return response
-	case <-time.After(3 * time.Second):
+	case <-time.After(5 * time.Second):
 		return ip
 	}
 }
