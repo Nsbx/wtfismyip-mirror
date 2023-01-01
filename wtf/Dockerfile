@@ -9,7 +9,7 @@ COPY wtf.go ./
 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o wtf .
 
-FROM alpine:latest
+FROM alpine:edge
 
 WORKDIR /app
 
