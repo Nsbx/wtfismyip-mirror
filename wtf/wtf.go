@@ -76,12 +76,12 @@ func main() {
 		Password: "",
 		DB:       0})
 
-	cityReader, err = geoip2.Open("/usr/local/wtf/GeoIP/GeoIP2-City.mmdb")
+	cityReader, err = geoip2.Open("/usr/local/wtf/GeoIP/ipdb.mmdb")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	orgReader, err = geoip2.Open("/usr/local/wtf/GeoIP/GeoIP2-ISP.mmdb")
+	orgReader, err = geoip2.Open("/usr/local/wtf/GeoIP/ipdb.mmdb")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -226,7 +226,7 @@ func geoData(ip string) (location geoText) {
 	var isCityPresent bool
 
 	address := net.ParseIP(ip)
-	isp, err := orgReader.ISP(address)
+	isp, err := orgReader.Enterprise(address)
 	if err != nil {
 		log.Println(err)
 	}
@@ -263,7 +263,7 @@ func geoData(ip string) (location geoText) {
 		location.countryCode = "Unknown"
 	}
 
-	location.org = isp.ISP
+	location.org = isp.Traits.ISP
 	return location
 }
 
