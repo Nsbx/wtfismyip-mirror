@@ -545,9 +545,8 @@ func wtfHandle(w http.ResponseWriter, r *http.Request) {
 	geo := geoData(add)
 	isTor := isTorExit(add)
 	myipwtf := false
-	if r.Host == "myip.wtf" {
-		myipwtf = true
-	}
+	lowHost := strings.ToLower(r.Host)
+	myipwtf = strings.HasSuffix(lowHost, "myip.wtf")
 	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, myipwtf, geo.city, geo.country}
 	if r.TLS == nil {
 		if myipwtf {
