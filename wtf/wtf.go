@@ -426,6 +426,7 @@ func json(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	w.Header().Set("X-Fortune", "It's going to be a fucking glorious day")
 	templateJSON.Execute(w, resp)
 }
 
@@ -439,6 +440,7 @@ func yaml(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/yaml")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	w.Header().Set("X-Fortune", "It's going to be a fucking glorious day")
 	templateYAML.Execute(w, resp)
 }
 
@@ -534,6 +536,7 @@ func xml(w http.ResponseWriter, r *http.Request) {
 	isTor := isTorExit(add)
 	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city, geo.country}
 	w.Header().Set("Content-Type", "application/xml")
+	w.Header().Set("X-Fortune", "It's going to be a fucking glorious day")
 	templateXML.Execute(w, resp)
 }
 
