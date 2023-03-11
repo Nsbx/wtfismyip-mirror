@@ -120,6 +120,7 @@ func main() {
 	r.Host("ipv5.wtfismyip.com").HandlerFunc(ipv5Handler)
 	r.Host("ipv7.wtfismyip.com").HandlerFunc(ipv5Handler)
         r.Host("yaml.myip.wtf").HandlerFunc(yaml)
+        r.Host("yaml.wtfismyip.com").HandlerFunc(yaml)
         r.Host("ipv4.yaml.wtfismyip.com").HandlerFunc(yaml)
         r.Host("ipv4.yaml.myip.wtf").HandlerFunc(yaml)
         r.Host("yaml.ipv4.wtfismyip.com").HandlerFunc(yaml)
