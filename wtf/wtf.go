@@ -438,7 +438,7 @@ func yaml(w http.ResponseWriter, r *http.Request) {
 	isIPv6 := strings.Contains(add, ":")
 	isTor := isTorExit(add)
 	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city, geo.country}
-	w.Header().Set("Content-Type", "text/yaml")
+	w.Header().Set("Content-Type", "text/yaml; charset=utf-8")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
 	w.Header().Set("X-Fortune", "It's going to be a fucking glorious day")
