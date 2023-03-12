@@ -11,9 +11,13 @@ TTL=60
 NA4=95.217.228.176
 NA6=2a01:4f9:4b:4c8f::2
 
-# OVH backup
+# Intel OVH backup
 BA4=66.70.179.219
 BA6=2607:5300:203:17db::6789
+
+# AMD OVH Backup
+BA4=15.204.2.228
+BA6=2604:2dc0:200:1014::9876
 
 echo "  wtfismyip.com -  a"
 
