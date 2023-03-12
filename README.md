@@ -60,6 +60,7 @@ Use this at church, motherfucker.
 - `https://text.wtfismyip.com/` 
 - `https://json.wtfismyip.com/`
 - `https://xml.wtfismyip.com/`
+- `https://yaml.wtfismyip.com/`
 
 # IPv4 hostname endpoints
 
@@ -67,12 +68,16 @@ Use this at church, motherfucker.
 
 - `https://text.ipv4.myip.wtf/`
 - `https://ipv4.text.myip.wtf/`
+- `https://yaml.ipv4.myip.wtf/`
+- `https://ipv4.yaml.myip.wtf/`
 - `https://json.ipv4.myip.wtf/`
 - `https://ipv4.json.myip.wtf/`
 - `https://xml.ipv4.myip.wtf/`
 - `https://ipv4.xml.myip.wtf/`
 - `https://text.ipv4.wtfismyip.com/`
 - `https://ipv4.text.wtfismyip.com/`
+- `https://yaml.ipv4.wtfismyip.com/`
+- `https://ipv4.yaml.wtfismyip.com/`
 - `https://json.ipv4.wtfismyip.com`
 - `https://ipv4.json.wtfismyip.com/`
 - `https://xml.ipv4.wtfismyip.com/`
@@ -89,12 +94,16 @@ Use this at church, motherfucker.
 
 - `https://text.ipv6.myip.wtf/`
 - `https://ipv6.text.myip.wtf/`
+- `https://yaml.ipv6.myip.wtf/`
+- `https://ipv6.yaml.myip.wtf/`
 - `https://json.ipv6.myip.wtf/`
 - `https://ipv6.json.myip.wtf/`
 - `https://xml.ipv6.myip.wtf/`
 - `https://ipv6.xml.myip.wtf/`
 - `https://text.ipv6.wtfismyip.com/`
 - `https://ipv6.text.wtfismyip.com/`
+- `https://yaml.ipv6.wtfismyip.com/`
+- `https://ipv6.yaml.wtfismyip.com/`
 - `https://json.ipv6.wtfismyip.com`
 - `https://ipv6.json.wtfismyip.com/`
 - `https://xml.ipv6.wtfismyip.com/`
