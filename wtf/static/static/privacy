@@ -88,7 +88,7 @@ wtfismyip.com, we perform a reverse DNS lookup of your IP address to display to
 you. Local databases are used to obtain all other information we display to
 you.  We do not use any fucking tracking cookies, fucking third-party analytics, nor do we sell
 fucking advertisements. We provide this solely as a free service for the fucking community.
-The service is built directly and unmodified from our publicly posted <a href="https://gitlab.wtfismyip.com/wtfismyip/wtfismyip/-/blob/master/wtf/wtf.go">source code</a>.
+The service is built directly and unmodified from our publicly posted <a href="https://gitlab.com/wtfismyip/wtfismyip/-/blob/master/wtf/wtf.go">source code</a>.
 
 <p>
 
