@@ -120,3 +120,4 @@ Use this at church, motherfucker.
 - XMPP: xmpp://gnu.gl/
 - Public DNS over TLS: dot.wtfismyip.com
 - Public STUN: wtfismyip.com
+- PSTN Attestation: 1-507-I-ATTEST (1-507-428-8378)
