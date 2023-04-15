@@ -118,4 +118,4 @@ Use this at church, motherfucker.
 
 - Mastodon: https://gnu.gl/
 - XMPP: xmpp://gnu.gl/
-- Public DNS over TLS: dot.metarapid.com
+- Public DNS over TLS: dot.wtfismyip.com
