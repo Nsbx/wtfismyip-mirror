@@ -113,3 +113,9 @@ Use this at church, motherfucker.
 
 - `https://ipv6.wtfismyip.com`
 - `https://ipv6.myip.wtf`
+
+# Related services
+
+- Mastodon: https://gnu.gl/
+- XMPP: xmpp://gnu.gl/
+- Public DNS over TLS: dot.metarapid.com
