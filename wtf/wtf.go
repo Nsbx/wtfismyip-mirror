@@ -547,7 +547,10 @@ func cleanHandle(w http.ResponseWriter, r *http.Request) {
 	hostname := reverseDNS(add)
 	geo := geoData(add)
 	isTor := isTorExit(add)
-	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city, geo.country}
+	myipwtf := false
+	lowHost := strings.ToLower(r.Host)
+	myipwtf = strings.HasSuffix(lowHost, "myip.wtf")
+	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, myipwtf, geo.city, geo.country}
 	templateClean.Execute(w, resp)
 }
 
