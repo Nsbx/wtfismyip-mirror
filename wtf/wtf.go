@@ -76,7 +76,7 @@ func main() {
 		Password: "",
 		DB:       0})
 
-	cityReader, err = geoip2.Open("/usr/local/wtf/GeoIP/ipdb.mmdb")
+	cityReader, err = geoip2.Open("/usr/local/wtf/GeoIP/ipdb2.mmdb")
 	if err != nil {
 		log.Fatal(err)
 	}
