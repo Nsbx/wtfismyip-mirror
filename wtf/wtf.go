@@ -21,6 +21,7 @@ import (
 	metrics "github.com/slok/go-http-metrics/metrics/prometheus"
 	"github.com/slok/go-http-metrics/middleware"
 	middlewarestd "github.com/slok/go-http-metrics/middleware/std"
+	"github.com/cyphar/filepath-securejoin"
 )
 
 var xffMode bool
@@ -301,7 +302,7 @@ func reverseDNS(ip string) (response string) {
 }
 
 func custom404(w http.ResponseWriter, r *http.Request) {
-	path := filepath.Join("/usr/local/wtf/static", filepath.Clean(r.URL.Path))
+	path, _ := securejoin.SecureJoin("/usr/local/wtf/static", filepath.Clean(r.URL.Path))
 	contents, err := ioutil.ReadFile(path)
 	if err != nil {
 		w.WriteHeader(http.StatusNotFound)
