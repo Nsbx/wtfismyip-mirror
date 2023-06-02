@@ -1,8 +1,8 @@
 # wtfismyip
 
-1. This is the fucking source code for https://wtfismyip.com/. There isn't much to it.
+1. This is the fucking source code for https://wtfismyip.com. There isn't much to it.
 2. This is now a fucking community project. Send a pull request to make it better.
-3. Backend is also accessible on https://myip.wtf/ because typing sucks.
+3. Backend is also accessible on https://myip.wtf because typing sucks.
 
 # Main fucking endpoints
 
@@ -54,34 +54,34 @@ Use this at church, motherfucker.
 
 *wtfismyip.com is dual-stack. Operating system defaults and network connectivity will determine whether you get an IPv4 or IPv6 address. That can be really fucking annoying, so we also have IPv4/IPv6-only endpoints as documented below.*
 
-- `https://text.myip.wtf/`
+- `https://text.myip.wtf`
 - `https://json.myip.wtf`
 - `https://xml.myip.wtf`
-- `https://text.wtfismyip.com/` 
-- `https://json.wtfismyip.com/`
-- `https://xml.wtfismyip.com/`
-- `https://yaml.wtfismyip.com/`
+- `https://text.wtfismyip.com` 
+- `https://json.wtfismyip.com`
+- `https://xml.wtfismyip.com`
+- `https://yaml.wtfismyip.com`
 
 # IPv4 hostname endpoints
 
 *Useful for automation, curl, terminal usage*
 
-- `https://text.ipv4.myip.wtf/`
-- `https://ipv4.text.myip.wtf/`
-- `https://yaml.ipv4.myip.wtf/`
-- `https://ipv4.yaml.myip.wtf/`
-- `https://json.ipv4.myip.wtf/`
-- `https://ipv4.json.myip.wtf/`
-- `https://xml.ipv4.myip.wtf/`
-- `https://ipv4.xml.myip.wtf/`
-- `https://text.ipv4.wtfismyip.com/`
-- `https://ipv4.text.wtfismyip.com/`
-- `https://yaml.ipv4.wtfismyip.com/`
-- `https://ipv4.yaml.wtfismyip.com/`
+- `https://text.ipv4.myip.wtf`
+- `https://ipv4.text.myip.wtf`
+- `https://yaml.ipv4.myip.wtf`
+- `https://ipv4.yaml.myip.wtf`
+- `https://json.ipv4.myip.wtf`
+- `https://ipv4.json.myip.wtf`
+- `https://xml.ipv4.myip.wtf`
+- `https://ipv4.xml.myip.wtf`
+- `https://text.ipv4.wtfismyip.com`
+- `https://ipv4.text.wtfismyip.com`
+- `https://yaml.ipv4.wtfismyip.com`
+- `https://ipv4.yaml.wtfismyip.com`
 - `https://json.ipv4.wtfismyip.com`
-- `https://ipv4.json.wtfismyip.com/`
-- `https://xml.ipv4.wtfismyip.com/`
-- `https://ipv4.xml.wtfismyip.com/`
+- `https://ipv4.json.wtfismyip.com`
+- `https://xml.ipv4.wtfismyip.com`
+- `https://ipv4.xml.wtfismyip.com`
 
 *Or if you're stuck in a browser*
 
@@ -92,22 +92,22 @@ Use this at church, motherfucker.
 
 *Useful for automation, curl, terminal usage*
 
-- `https://text.ipv6.myip.wtf/`
-- `https://ipv6.text.myip.wtf/`
-- `https://yaml.ipv6.myip.wtf/`
-- `https://ipv6.yaml.myip.wtf/`
-- `https://json.ipv6.myip.wtf/`
-- `https://ipv6.json.myip.wtf/`
-- `https://xml.ipv6.myip.wtf/`
-- `https://ipv6.xml.myip.wtf/`
-- `https://text.ipv6.wtfismyip.com/`
-- `https://ipv6.text.wtfismyip.com/`
-- `https://yaml.ipv6.wtfismyip.com/`
-- `https://ipv6.yaml.wtfismyip.com/`
+- `https://text.ipv6.myip.wtf`
+- `https://ipv6.text.myip.wtf`
+- `https://yaml.ipv6.myip.wtf`
+- `https://ipv6.yaml.myip.wtf`
+- `https://json.ipv6.myip.wtf`
+- `https://ipv6.json.myip.wtf`
+- `https://xml.ipv6.myip.wtf`
+- `https://ipv6.xml.myip.wtf`
+- `https://text.ipv6.wtfismyip.com`
+- `https://ipv6.text.wtfismyip.com`
+- `https://yaml.ipv6.wtfismyip.com`
+- `https://ipv6.yaml.wtfismyip.com`
 - `https://json.ipv6.wtfismyip.com`
-- `https://ipv6.json.wtfismyip.com/`
-- `https://xml.ipv6.wtfismyip.com/`
-- `https://ipv6.xml.wtfismyip.com/`
+- `https://ipv6.json.wtfismyip.com`
+- `https://xml.ipv6.wtfismyip.com`
+- `https://ipv6.xml.wtfismyip.com`
 
 *Or if you're stuck in a browser*
 
@@ -116,8 +116,8 @@ Use this at church, motherfucker.
 
 # Related services
 
-- Mastodon: https://gnu.gl/
-- XMPP: xmpp://gnu.gl/
+- Mastodon: https://gnu.gl
+- XMPP: xmpp://gnu.gl
 - Public DNS over TLS: dot.wtfismyip.com
 - Public STUN: wtfismyip.com
 - PSTN Attestation: 1-507-I-ATTEST (1-507-428-8378)
