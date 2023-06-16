@@ -9,15 +9,11 @@ TTL=60
 
 # Hetzner primary
 NA4=95.217.228.176
-NA6=2a01:4f9:4b:4c8f::2
-
-# Intel OVH backup
-BA4=66.70.179.219
-BA6=2607:5300:203:17db::6789
+NA6=2a01:4f9:4b:4c8f::acab
 
 # AMD OVH Backup
 BA4=15.204.2.228
-BA6=2604:2dc0:200:1014::9876
+BA6=2604:2dc0:200:1014::acab
 
 echo "  wtfismyip.com -  a"
 

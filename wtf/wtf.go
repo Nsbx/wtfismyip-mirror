@@ -14,6 +14,7 @@ import (
 	"time"
 
 	"github.com/caddyserver/certmagic"
+	"github.com/cyphar/filepath-securejoin"
 	"github.com/go-redis/redis/v8"
 	"github.com/gorilla/mux"
 	"github.com/oschwald/geoip2-golang"
@@ -21,7 +22,6 @@ import (
 	metrics "github.com/slok/go-http-metrics/metrics/prometheus"
 	"github.com/slok/go-http-metrics/middleware"
 	middlewarestd "github.com/slok/go-http-metrics/middleware/std"
-	"github.com/cyphar/filepath-securejoin"
 )
 
 var xffMode bool
@@ -120,16 +120,16 @@ func main() {
 
 	r.Host("ipv5.wtfismyip.com").HandlerFunc(ipv5Handler)
 	r.Host("ipv7.wtfismyip.com").HandlerFunc(ipv5Handler)
-        r.Host("yaml.myip.wtf").HandlerFunc(yaml)
-        r.Host("yaml.wtfismyip.com").HandlerFunc(yaml)
-        r.Host("ipv4.yaml.wtfismyip.com").HandlerFunc(yaml)
-        r.Host("ipv4.yaml.myip.wtf").HandlerFunc(yaml)
-        r.Host("yaml.ipv4.wtfismyip.com").HandlerFunc(yaml)
-        r.Host("yaml.ipv4.myip.wtf").HandlerFunc(yaml)
-        r.Host("ipv6.yaml.wtfismyip.com").HandlerFunc(yaml)
-        r.Host("ipv6.yaml.myip.wtf").HandlerFunc(yaml)
-        r.Host("yaml.ipv6.wtfismyip.com").HandlerFunc(yaml)
-        r.Host("yaml.ipv6.myip.wtf").HandlerFunc(yaml)
+	r.Host("yaml.myip.wtf").HandlerFunc(yaml)
+	r.Host("yaml.wtfismyip.com").HandlerFunc(yaml)
+	r.Host("ipv4.yaml.wtfismyip.com").HandlerFunc(yaml)
+	r.Host("ipv4.yaml.myip.wtf").HandlerFunc(yaml)
+	r.Host("yaml.ipv4.wtfismyip.com").HandlerFunc(yaml)
+	r.Host("yaml.ipv4.myip.wtf").HandlerFunc(yaml)
+	r.Host("ipv6.yaml.wtfismyip.com").HandlerFunc(yaml)
+	r.Host("ipv6.yaml.myip.wtf").HandlerFunc(yaml)
+	r.Host("yaml.ipv6.wtfismyip.com").HandlerFunc(yaml)
+	r.Host("yaml.ipv6.myip.wtf").HandlerFunc(yaml)
 	r.Host("text.wtfismyip.com").HandlerFunc(text)
 	r.Host("text.myip.wtf").HandlerFunc(text)
 	r.Host("ipv4.text.wtfismyip.com").HandlerFunc(text)
