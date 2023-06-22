@@ -13,7 +13,7 @@ services:
             security_opt:
               - no-new-privileges:true
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:6"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:7"
             #image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:17"
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
@@ -27,7 +27,7 @@ services:
             restart: unless-stopped
             security_opt:
               - no-new-privileges:true
-            #runtime: runsc-kvm
+            runtime: runsc-kvm
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
@@ -50,7 +50,7 @@ services:
             security_opt:
               - no-new-privileges:true
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:8"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:9"
             mem_limit: 256m
             volumes:
                     - "/docker/turnserver/turnserver.conf:/etc/turnserver.conf"
