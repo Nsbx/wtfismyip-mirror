@@ -12,7 +12,7 @@ services:
             restart: unless-stopped
             security_opt:
               - no-new-privileges:true
-            runtime: runsc-kvm
+            runtime: runsc-systrap
             image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:7"
             #image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:17"
             volumes:
@@ -27,11 +27,11 @@ services:
             restart: unless-stopped
             security_opt:
               - no-new-privileges:true
-            runtime: runsc-kvm
+            runtime: runsc-systrap
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:3.6.4"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:3.4.8"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
@@ -49,7 +49,7 @@ services:
             restart: unless-stopped
             security_opt:
               - no-new-privileges:true
-            runtime: runsc-kvm
+            runtime: runsc-systrap
             image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:9"
             mem_limit: 256m
             volumes:
@@ -63,7 +63,7 @@ services:
             restart: unless-stopped
             security_opt:
               - no-new-privileges:true
-            runtime: runsc-kvm
+            runtime: runsc-systrap
             image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-redis:3"
             mem_limit: 256m
             networks:

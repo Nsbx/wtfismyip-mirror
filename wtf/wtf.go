@@ -77,12 +77,12 @@ func main() {
 		Password: "",
 		DB:       0})
 
-	cityReader, err = geoip2.Open("/usr/local/wtf/GeoIP/ipdb2.mmdb")
+	cityReader, err = geoip2.Open("/usr/local/wtf/GeoIP/ipcity.mmdb")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	orgReader, err = geoip2.Open("/usr/local/wtf/GeoIP/ipdb.mmdb")
+	orgReader, err = geoip2.Open("/usr/local/wtf/GeoIP/iporg.mmdb")
 	if err != nil {
 		log.Fatal(err)
 	}

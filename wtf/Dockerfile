@@ -1,4 +1,4 @@
-FROM golang:1.21rc2-alpine3.18 as builder
+FROM golang:1.21rc3-alpine3.18 as builder
 
 MAINTAINER Clint Ruoho clint@wtfismyip.com
 
@@ -7,7 +7,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 COPY wtf.go ./
 
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o wtf .
+RUN CGO_ENABLED=0 GOOS=linux GOAMD64=v3 go build -a -installsuffix cgo -o wtf .
 
 FROM alpine:edge
 
