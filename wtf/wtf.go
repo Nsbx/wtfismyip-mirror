@@ -199,6 +199,7 @@ func main() {
 	r.HandleFunc("/{foo:.*~$}", miscHandle)
 	r.HandleFunc("/{foo:.*sql$}", sqlHandle)
 	r.HandleFunc("/{foo:.*zip$}", zipHandle)
+	r.HandleFunc("/{foo:.*rar$}", rarHandle)
 	r.HandleFunc("/{foo:.*gz$}", gzHandle)
 	r.HandleFunc("/{foo:.*ini$}", iniHandle)
 	r.HandleFunc("/{foo:.*env$}", envHandle)
@@ -358,6 +359,16 @@ func zipHandle(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "No such fucking page!")
 	}
 	w.Header().Set("Content-Type", "application/zip")
+	w.Write(contents)
+}
+
+func rarHandle(w http.ResponseWriter, r *http.Request) {
+	contents, err := ioutil.ReadFile("/usr/local/wtf/static/wtf.rar")
+	if err != nil {
+		w.WriteHeader(http.StatusNotFound)
+		fmt.Fprintf(w, "No such fucking page!")
+	}
+	w.Header().Set("Content-Type", "application/rar")
 	w.Write(contents)
 }
 
