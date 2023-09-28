@@ -30,19 +30,19 @@ services:
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.0.8"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.0.9"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
             dns: 172.19.1.50
             mem_limit: 24g
             ports:
-              - "95.217.228.176:80:10080"
-              - "95.217.228.176:443:10443"
-              - "95.217.228.176:443:10443/udp"
-              - "[2a01:4f9:4b:4c8f::acab]:80:10080"
-              - "[2a01:4f9:4b:4c8f::acab]:443:10443"
-              - "[2a01:4f9:4b:4c8f::acab]:443:10443/udp"
+              - "65.108.75.112:80:10080"
+              - "65.108.75.112:443:10443"
+              - "65.108.75.112:443:10443/udp"
+              - "[2a01:4f9:6b:4b55::acab]:80:10080"
+              - "[2a01:4f9:6b:4b55::acab]:443:10443"
+              - "[2a01:4f9:6b:4b55::acab]:443:10443/udp"
 
     stun:
             restart: unless-stopped
