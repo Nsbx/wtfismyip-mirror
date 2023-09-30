@@ -29,6 +29,7 @@ var cityReader *geoip2.Reader
 var orgReader *geoip2.Reader
 var templateHTML *template.Template
 var templateJSON *template.Template
+var templateCleanJSON *template.Template
 var templateYAML *template.Template
 var templateXML *template.Template
 var templateClean *template.Template
@@ -98,6 +99,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	templateCleanJSON, err = template.ParseFiles("/usr/local/wtf/static/cleanjson.template")
+	if err != nil {
+		log.Fatal(err)
+	}
 	templateYAML, err = template.ParseFiles("/usr/local/wtf/static/yaml.template")
 	if err != nil {
 		log.Fatal(err)
@@ -161,6 +166,7 @@ func main() {
 	r.Host("xml.ipv6.wtfismyip.com").HandlerFunc(xml)
 	r.Host("xml.ipv6.myip.wtf").HandlerFunc(xml)
 	r.HandleFunc("/",cleanHandle).Host("clean.wtfismyip.com")
+	r.HandleFunc("/json",cleanjson).Host("clean.wtfismyip.com")
 	r.HandleFunc("/clean", cleanHandle)
 	r.HandleFunc("/headers", headers)
 	r.HandleFunc("/test", test)
@@ -427,6 +433,20 @@ func metricsHandle(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusForbidden)
 		w.Write([]byte("sorry dude"))
 	}
+}
+
+func cleanjson(w http.ResponseWriter, r *http.Request) {
+	add := getAddress(r)
+	hostname := reverseDNS(add)
+	geo := geoData(add)
+	isIPv6 := strings.Contains(add, ":")
+	isTor := isTorExit(add)
+	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, false, geo.city, geo.country}
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	w.Header().Set("X-Fortune", "It's going to be a fucking glorious day")
+	templateCleanJSON.Execute(w, resp)
 }
 
 func json(w http.ResponseWriter, r *http.Request) {

@@ -1,0 +1,10 @@
+{
+    "YourIPAddress": "{{.Address}}",
+    "YourLocation": "{{.Geo}}",
+    "YourHostname": "{{.Hostname}}",
+    "YourISP": "{{.ISP}}",
+    "YourTorExit": {{.Tor}},
+    "YourCity": "{{.City}}",
+    "YourCountry": "{{.Country}}",
+    "YourCountryCode": "{{.CountryCode}}"
+}
