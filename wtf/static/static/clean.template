@@ -85,7 +85,7 @@ a:link,a:visited,#tor{color:#f30}
       </center>
       <center>
          <p>
-         <H3>Give me this stuff in <a href="/xml">XML</a>, <a href="/json">JSON</a> or <a href="/text">plain text!</a></H3>
+         <H3>Give me this stuff in <a href="/xml">XML</a>, <a href="https://clean.wtfismyip.com/json">JSON</a> or <a href="/text">plain text!</a></H3>
          <p>
       </center>
    </div>
