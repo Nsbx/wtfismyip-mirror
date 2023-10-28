@@ -27,7 +27,7 @@ services:
             restart: unless-stopped
             security_opt:
               - no-new-privileges:true
-            runtime: io.containerd.kata.v2
+            #runtime: io.containerd.kata.v2
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
