@@ -14,7 +14,7 @@ services:
               - no-new-privileges:true
             runtime: runsc-kvm
             #image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:9"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:19"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:20"
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
