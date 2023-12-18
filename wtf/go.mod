@@ -1,9 +1,9 @@
 module gitlab.com/wtfismyip/wtfismyip
 
-go 1.21.4
+go 1.21.5
 
 require (
-	github.com/caddyserver/certmagic v0.19.2
+	github.com/caddyserver/certmagic v0.20.0
 	github.com/cyphar/filepath-securejoin v0.2.4
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gorilla/mux v1.8.1
