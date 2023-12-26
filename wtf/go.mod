@@ -1,6 +1,6 @@
 module gitlab.com/wtfismyip/wtfismyip
 
-go 1.21.5
+go 1.22rc1
 
 require (
 	github.com/caddyserver/certmagic v0.20.0
