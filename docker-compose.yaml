@@ -14,7 +14,7 @@ services:
               - no-new-privileges:true
             runtime: runsc-kvm
             #image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:9"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:20"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:21"
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
@@ -31,7 +31,7 @@ services:
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.2.4"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.2.5"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
@@ -50,7 +50,7 @@ services:
             security_opt:
               - no-new-privileges:true
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:10"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:11"
             mem_limit: 256m
             volumes:
                     - "/docker/turnserver/turnserver.conf:/etc/turnserver.conf"
@@ -64,7 +64,7 @@ services:
             security_opt:
               - no-new-privileges:true
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-redis:4"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-redis:5"
             mem_limit: 512m
             networks:
                     omgwtfbbq:
