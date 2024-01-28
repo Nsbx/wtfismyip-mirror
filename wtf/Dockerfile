@@ -1,4 +1,4 @@
-FROM golang:1.22rc1 as builder
+FROM golang:1.22rc2 as builder
 
 MAINTAINER Clint Ruoho clint@wtfismyip.com
 
@@ -6,6 +6,7 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY wtf.go ./
+COPY default.pgo ./
 
 RUN CGO_ENABLED=0 GOOS=linux GOAMD64=v3 go build -a -installsuffix cgo -o wtf .
 
