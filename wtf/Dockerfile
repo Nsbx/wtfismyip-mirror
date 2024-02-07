@@ -1,4 +1,4 @@
-FROM golang:1.22rc2 as builder
+FROM golang:1.22 as builder
 
 MAINTAINER Clint Ruoho clint@wtfismyip.com
 
@@ -8,7 +8,7 @@ RUN go mod download
 COPY wtf.go ./
 COPY default.pgo ./
 
-RUN CGO_ENABLED=0 GOOS=linux GOAMD64=v3 go build -a -installsuffix cgo -o wtf .
+RUN CGO_ENABLED=0 GOOS=linux GOAMD64=v4 go build -a -installsuffix cgo -o wtf .
 
 FROM alpine:edge
 
