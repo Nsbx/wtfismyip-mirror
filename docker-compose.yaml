@@ -19,7 +19,7 @@ services:
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
-            mem_limit: 8g
+            #mem_limit: 8g
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.50
@@ -33,12 +33,12 @@ services:
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.2.15a"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.2.18a"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
             dns: 172.19.1.50
-            mem_limit: 24g
+            #mem_limit: 8g
             ports:
               - "65.108.75.112:80:10080"
               - "65.108.75.112:443:10443"

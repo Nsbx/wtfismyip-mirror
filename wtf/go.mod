@@ -1,6 +1,6 @@
 module gitlab.com/wtfismyip/wtfismyip
 
-go 1.22rc1
+go 1.22.0
 
 require (
 	github.com/caddyserver/certmagic v0.20.0
@@ -8,7 +8,7 @@ require (
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gorilla/mux v1.8.1
 	github.com/oschwald/geoip2-golang v1.9.0
-	github.com/prometheus/client_golang v1.17.0
+	github.com/prometheus/client_golang v1.18.0
 	github.com/slok/go-http-metrics v0.11.0
 )
 
@@ -32,7 +32,7 @@ require (
 	golang.org/x/crypto v0.14.0 // indirect
 	golang.org/x/mod v0.11.0 // indirect
 	golang.org/x/net v0.17.0 // indirect
-	golang.org/x/sys v0.13.0 // indirect
+	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
 	golang.org/x/tools v0.10.0 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
