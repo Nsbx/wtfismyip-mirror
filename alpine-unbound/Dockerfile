@@ -1,7 +1,7 @@
 FROM alpine:edge
 
 MAINTAINER Clint Ruoho clint@wtfismyip.com
-LABEL package.date=2023-11-14
+LABEL package.date=2024-02-13
 
 RUN apk update
 RUN apk add --no-cache unbound openssl procps-ng

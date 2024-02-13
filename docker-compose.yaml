@@ -15,7 +15,7 @@ services:
             runtime: io.containerd.kata.v2
             #runtime: runsc-kvm
             #image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:9"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:21"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:22"
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
