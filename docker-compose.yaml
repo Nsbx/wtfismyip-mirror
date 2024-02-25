@@ -75,6 +75,7 @@ services:
               - "3478:3478/udp"
     redis:
             restart: unless-stopped
+            read_only: true
             security_opt:
               - no-new-privileges:true
             runtime: io.containerd.kata.v2
