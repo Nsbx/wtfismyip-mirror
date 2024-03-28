@@ -20,7 +20,7 @@ services:
             runtime: io.containerd.kata.v2
             #runtime: runsc-kvm
             #image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/debian-bind:9"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:23"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:24"
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
@@ -39,12 +39,12 @@ services:
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.2.22a"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.2.31a"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
             dns: 172.19.1.50
-            mem_limit: 8g
+            mem_limit: 16g
             ports:
               - "65.108.75.112:80:10080"
               - "65.108.75.112:443:10443"
