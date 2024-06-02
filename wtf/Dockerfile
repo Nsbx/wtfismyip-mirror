@@ -7,7 +7,7 @@ COPY go.mod go.sum ./
 COPY wtf.go ./
 COPY default.pgo ./
 
-RUN go mod download && CGO_ENABLED=0 GOOS=linux GOAMD64=v4 go build -a -installsuffix cgo -o wtf .
+RUN go mod download && CGO_ENABLED=0 GOOS=linux GOAMD64=v3 go build -a -installsuffix cgo -o wtf .
 
 FROM alpine:edge
 

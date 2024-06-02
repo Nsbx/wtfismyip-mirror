@@ -597,6 +597,10 @@ func cleanHandle(w http.ResponseWriter, r *http.Request) {
 }
 
 func wtfHandle(w http.ResponseWriter, r *http.Request) {
+	// Changing respnonses based on User-Agent surely must violate some fucking RFC
+	if strings.HasPrefix(r.Header.Get("User-Agent"), "curl") {
+		text(w, r)
+	}
 	add := getAddress(r)
 	isIPv6 := strings.Contains(add, ":")
 	hostname := reverseDNS(add)
