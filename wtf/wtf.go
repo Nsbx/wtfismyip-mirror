@@ -597,41 +597,42 @@ func cleanHandle(w http.ResponseWriter, r *http.Request) {
 }
 
 func wtfHandle(w http.ResponseWriter, r *http.Request) {
-	// Changing respnonses based on User-Agent surely must violate some fucking RFC
-	if strings.HasPrefix(r.Header.Get("User-Agent"), "curl") || strings.HasPrefix(r.Header.Get("User-Agent"), "HTTPie") {
+	// Changing respones based on User-Agent surely must violate some fucking RFC
+	if strings.HasPrefix(r.Header.Get("user-agent"), "curl") || strings.HasPrefix(r.Header.Get("user-agent"), "HTTPie") {
 		text(w, r)
-	}
-	add := getAddress(r)
-	isIPv6 := strings.Contains(add, ":")
-	hostname := reverseDNS(add)
-	geo := geoData(add)
-	isTor := isTorExit(add)
-	myipwtf := false
-	lowHost := strings.ToLower(r.Host)
-	myipwtf = strings.HasSuffix(lowHost, "myip.wtf")
-	resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, myipwtf, geo.city, geo.country}
-	if r.TLS == nil {
-		if myipwtf {
-			http.Redirect(w, r, "https://myip.wtf/", 301)
-		} else {
-			http.Redirect(w, r, "https://wtfismyip.com/", 301)
-		}
 	} else {
-		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		w.Header().Set("X-Hire-Me", "clint@wtfismyip.com")
-		w.Header().Set("X-Frame-Options", "DENY")
-		w.Header().Set("Cache-Control", "no-cache, no-store, max-age=0, must-revalidate")
-		w.Header().Set("Pragma", "no-cache")
-		w.Header().Set("Expires", "0")
-		w.Header().Set("X-OMGWTF", "BBQ")
-		w.Header().Set("X-XSS-Protection", "1; mode=block")
-		w.Header().Set("X-Content-Type-Options", "nosniff")
-		w.Header().Set("Content-Security-Policy", "default-src 'none'; img-src wtfismyip.com myip.wtf; script-src ipv4.wtfismyip.com wtfismyip.com myip.wtf ipv4.myip.wtf; style-src 'unsafe-inline'")
-		w.Header().Set("X-DNS-Prefetch-Control", "off")
-		w.Header().Set("Referrer-Policy", "no-referrer")
-		w.Header().Set("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload")
-		w.Header().Set("X-Did-I-Set-Too-Many-Fucking-Headers", "Yes. I just wanted a fucking A from securityheaders.io.")
-		templateHTML.Execute(w, resp)
+		add := getAddress(r)
+		isIPv6 := strings.Contains(add, ":")
+		hostname := reverseDNS(add)
+		geo := geoData(add)
+		isTor := isTorExit(add)
+		myipwtf := false
+		lowHost := strings.ToLower(r.Host)
+		myipwtf = strings.HasSuffix(lowHost, "myip.wtf")
+		resp := wtfResponse{isIPv6, add, hostname, geo.details, geo.org, geo.countryCode, isTor, myipwtf, geo.city, geo.country}
+		if r.TLS == nil {
+			if myipwtf {
+				http.Redirect(w, r, "https://myip.wtf/", 301)
+			} else {
+				http.Redirect(w, r, "https://wtfismyip.com/", 301)
+			}
+		} else {
+			w.Header().Set("Content-Type", "text/html; charset=utf-8")
+			w.Header().Set("X-Hire-Me", "clint@wtfismyip.com")
+			w.Header().Set("X-Frame-Options", "DENY")
+			w.Header().Set("Cache-Control", "no-cache, no-store, max-age=0, must-revalidate")
+			w.Header().Set("Pragma", "no-cache")
+			w.Header().Set("Expires", "0")
+			w.Header().Set("X-OMGWTF", "BBQ")
+			w.Header().Set("X-XSS-Protection", "1; mode=block")
+			w.Header().Set("X-Content-Type-Options", "nosniff")
+			w.Header().Set("Content-Security-Policy", "default-src 'none'; img-src wtfismyip.com myip.wtf; script-src ipv4.wtfismyip.com wtfismyip.com myip.wtf ipv4.myip.wtf; style-src 'unsafe-inline'")
+			w.Header().Set("X-DNS-Prefetch-Control", "off")
+			w.Header().Set("Referrer-Policy", "no-referrer")
+			w.Header().Set("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload")
+			w.Header().Set("X-Did-I-Set-Too-Many-Fucking-Headers", "Yes. I just wanted a fucking A from securityheaders.io.")
+			templateHTML.Execute(w, resp)
+		}
 	}
 }
 
@@ -703,4 +704,4 @@ func isTorExit(ip string) bool {
 		return true
 	}
 	return false
-} 
+}
