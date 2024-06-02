@@ -1,39 +1,34 @@
 $ORIGIN wtfismyip.com.
-@	3600	IN	SOA	dns41.cloudns.net. support.cloudns.net. 2022121706 7200 1800 1209600 3600
+@	3600	IN	SOA	dns41.cloudns.net. support.cloudns.net. 2024060210 7200 1800 1209600 3600
 @	3600	IN	NS	dns41.cloudns.net.
 @	3600	IN	NS	dns42.cloudns.net.
 @	3600	IN	NS	dns43.cloudns.net.
 @	3600	IN	NS	dns44.cloudns.net.
-@	60	IN	A	66.70.179.219
-@	60	IN	AAAA	2607:5300:203:17db::6789
+@	60	IN	A	65.108.75.112
+@	60	IN	AAAA	2a01:4f9:6b:4b55::acab
 @	86400	IN	MX	10 wtfismyip-com.mail.protection.outlook.com.
 @	86400	IN	TXT	"brave-ledger-verification=6fb36367c1fad300eff4d5658c2b9abac40380572dd8682d1a7c78acd6637c6c"
 @	86400	IN	TXT	"google-site-verification=AXXKfrBR2-NApGVBYUwYtbJlQDctcVCpCU0KcM5Yoj0"
 @	86400	IN	TXT	"MS=ms86100777"
 @	86400	IN	TXT	"v=spf1 include:spf.protection.outlook.com -all"
-ca1	3600	IN	A	54.39.106.25
-ca1	3600	IN	AAAA	2607:5300:203:3c19::2
-eu1	3600	IN	A	95.217.228.176
-eu1	3600	IN	AAAA	2a01:4f9:4b:4c8f::2
-ns1	3600	IN	A	34.27.193.101
+ca1	3600	IN	A	198.27.70.99
+ca1	3600	IN	AAAA	2607:5300:60:1f63::acab
+eu1	3600	IN	A	65.108.75.112
+eu1	3600	IN	AAAA	2a01:4f9:6b:4b55::acab
+ns1	3600	IN	A	104.245.32.240
 ns2	3600	IN	A	158.101.39.95
-ns3	3600	IN	A	34.27.193.101
+ns3	3600	IN	A	104.245.32.240
 ns4	3600	IN	A	158.101.39.95
-us1	3600	IN	A	69.197.161.130
-us1	3600	IN	AAAA	2604:4300:a:225:ec4:7aff:fe33:7dea
 www	86400	IN	CNAME	@
 xml	86400	IN	CNAME	@
-ipv4	60	IN	A	66.70.179.219
+ipv4	60	IN	A	65.108.75.112
 ipv5	86400	IN	CNAME	@
-ipv6	60	IN	AAAA	2607:5300:203:17db::6789
+ipv6	60	IN	AAAA	2a01:4f9:6b:4b55::acab
 json	86400	IN	CNAME	@
 stun	86400	IN	CNAME	@
 text	86400	IN	CNAME	@
-ipv6-ap1	3600	IN	AAAA	2402:1f00:8000:800::1044
-ipv6-ca1	3600	IN	AAAA	2607:5300:203:3c19::2
-ipv6-eu1	3600	IN	AAAA	2a01:4f9:4b:4c8f::2
-ipv6-eu2	3600	IN	AAAA	2a02:2770:16:0:21a:4aff:fedc:c1bf
-ipv6-us1	3600	IN	AAAA	2604:4300:a:225:ec4:7aff:fe33:7dea
+ipv6-ca1	3600	IN	AAAA	2607:5300:60:1f63::acab
+ipv6-eu1	3600	IN	AAAA	2a01:4f9:6b:4b55::acab
 autodiscover	86400	IN	CNAME	autodiscover.outlook.com.
 rw2rj4vi65ys	86400	IN	CNAME	gv-dakcr3gkqyizxuc23ggurzana7tpf57pb4tfubkamprxjqnnetwq.domainverify.googlehosted.com.
 enterpriseenrollment	86400	IN	CNAME	enterpriseenrollment.manage.microsoft.com.
@@ -57,16 +52,16 @@ fm1._domainkey	86400	IN	CNAME	fm1.wtfismyip.com.dkim.fmhosted.com.
 fm2._domainkey	86400	IN	CNAME	fm2.wtfismyip.com.dkim.fmhosted.com.
 fm3._domainkey	86400	IN	CNAME	fm3.wtfismyip.com.dkim.fmhosted.com.
 omgwtfbbq._domainkey	86400	IN	TXT	"v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDEPl3woETdtcdbrvrU0u9ey1Ec+AUDyrHRPUAAfGjtZRtXOwRRUb8W51t2bu/YSTVUz0li6rfbAnBPuobn9EFlEEUe4UkAdM3kHkF8/mU2fnEo/TWbe88+0AXeCeWpkYZyqO9rHQFrwwAiYn0zMP5E/yDRrVDdv5BMFAsvNcch9wIDAQAB"
-static	300	IN	A	95.217.228.164
-_acme-challenge.text	60	IN	TXT	"-H9EpA_JY4VytoODR8AOKmZTtPhzAYGUcPYJc7GflSI"
-gitlab	3600	IN	A	95.217.228.164
-_acme-challenge	60	IN	TXT	"Pl4Pyy7DwKKTNRl7Z3ndcX6dh58OyVKNRfks2sSs1r4"
-_acme-challenge	60	IN	TXT	"4sL7kkos0GGcCL4MeTAF-EFaJPyAoS4BBIhb_miYA44"
-_acme-challenge.json	60	IN	TXT	"Ec4m23Sz3CBd4f1bp-xHaJ1xU3tTVp11iGDXs0XoHJ0"
-_acme-challenge.text	60	IN	TXT	"ylhvRL_Qzfaic8SEDLqdqf6_Eofqxt2TWtxpxwcI9Ww"
-_acme-challenge.xml	60	IN	TXT	"GFS1WrnyZTU0MdxzaK3iHymF5qcVriEmXmuMf8b-AiM"
-_acme-challenge.ipv4	60	IN	TXT	"9vfM1iQxmPkYC7DNzIQntBwwYQ0GW1GOsgwYf8WJ-zQ"
-moo	3600	IN	A	95.217.228.164
+static	300	IN	A	65.108.75.113
 @	3600	IN	CAA	0 issue "pki.goog"
-ovh	60	IN	A	66.70.179.219
 hetzner	60	IN	A	95.217.228.176
+yaml.ipv4	86400	IN	CNAME	ipv4.wtfismyip.com.
+ipv4.yaml	86400	IN	CNAME	ipv4.wtfismyip.com.
+ipv6.yaml	86400	IN	CNAME	ipv6.wtfismyip.com.
+yaml.ipv6	86400	IN	CNAME	ipv6.wtfismyip.com.
+yaml	86400	IN	CNAME	@
+dot	86400	IN	A	64.23.216.29
+clean	3600	IN	CNAME	@
+static	60	IN	AAAA	2a01:4f9:6b:4b55::2
+dot	3600	IN	AAAA	2604:a880:4:1d0::7e0:1000
+
