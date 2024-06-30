@@ -18,7 +18,7 @@ services:
             security_opt:
               - no-new-privileges:true
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:24"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:25"
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
@@ -32,11 +32,11 @@ services:
             read_only: true
             security_opt:
               - no-new-privileges:true
-            runtime: runsc-kvm
+            #runtime: runsc-kvm
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.6.0a"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.6.2a"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
@@ -76,7 +76,7 @@ services:
               - no-new-privileges:true
             runtime: runsc-kvm
             image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/redis-redis:4"
-            mem_limit: 128m
+            mem_limit: 256m
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.70
