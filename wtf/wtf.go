@@ -656,8 +656,12 @@ func healthHandle(w http.ResponseWriter, r *http.Request) {
 }
 
 func trafficHandle(w http.ResponseWriter, r *http.Request) {
-	//fmt.Fprintf(w, "<html><head><p><img src=\"/wtf.png\" style=\"width: 100%; object-fit: contain\"></head></html>")
-	fmt.Fprintf(w, "<html><head><img src=\"/omgwtfbbq.png\" style=\"width: 100%; object-fit: contain\"><p><img src=\"/wtf.png\" style=\"width: 100%; object-fit: contain\"></head></html>")
+	w.Header().Set("Cache-Control", "no-cache, no-store, max-age=0, must-revalidate")
+	w.Header().Set("Pragma", "no-cache")
+	w.Header().Set("Expires", "0")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	fmt.Fprintf(w, "<html><body><img src=\"/omgwtfbbq.png\" style=\"width: 100%; object-fit: contain\"><p><img src=\"/wtf.png\" style=\"width: 100%; object-fit: contain\"></body></html>")
 }
 
 func gitconfigHandle(w http.ResponseWriter, r *http.Request) {

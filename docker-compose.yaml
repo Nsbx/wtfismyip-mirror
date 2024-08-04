@@ -17,7 +17,7 @@ services:
               - /var/log
             security_opt:
               - no-new-privileges:true
-            runtime: runsc-kvm
+            runtime: io.containerd.kata.v2
             image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:26"
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
@@ -32,11 +32,11 @@ services:
             read_only: true
             security_opt:
               - no-new-privileges:true
-            #runtime: runsc-kvm
+            runtime: io.containerd.kata.v2
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.7.0a"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.10.0a"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
@@ -46,9 +46,9 @@ services:
               - "65.108.75.112:80:10080"
               - "65.108.75.112:443:10443"
               - "65.108.75.112:443:10443/udp"
-              - "[2a01:4f9:6b:4b55::acab]:80:10080"
-              - "[2a01:4f9:6b:4b55::acab]:443:10443"
-              - "[2a01:4f9:6b:4b55::acab]:443:10443/udp"
+              - "[2a01:4f9:6b:4b55::acab:f001]:80:10080"
+              - "[2a01:4f9:6b:4b55::acab:f001]:443:10443"
+              - "[2a01:4f9:6b:4b55::acab:f001]:443:10443/udp"
 
     stun:
             restart: unless-stopped
@@ -59,7 +59,7 @@ services:
               - /var/log
             security_opt:
               - no-new-privileges:true
-            runtime: runsc-kvm
+            runtime: io.containerd.kata.v2
             image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:15"
             mem_limit: 128m
             volumes:
@@ -75,7 +75,7 @@ services:
             security_opt:
               - no-new-privileges:true
             runtime: runsc-kvm
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/redis-redis:5"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-redis:10"
             mem_limit: 256m
             networks:
                     omgwtfbbq:
