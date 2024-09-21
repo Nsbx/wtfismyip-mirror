@@ -4,7 +4,7 @@ go 1.22.5
 
 require (
 	github.com/caddyserver/certmagic v0.21.3
-	github.com/cyphar/filepath-securejoin v0.3.0
+	github.com/cyphar/filepath-securejoin v0.3.1
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gorilla/mux v1.8.1
 	github.com/oschwald/geoip2-golang v1.11.0

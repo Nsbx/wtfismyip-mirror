@@ -18,7 +18,7 @@ services:
             security_opt:
               - no-new-privileges:true
             runtime: io.containerd.kata.v2
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:26"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-unbound:27"
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/docker/unbound.conf:/etc/unbound/unbound.conf"
@@ -32,11 +32,11 @@ services:
             read_only: true
             security_opt:
               - no-new-privileges:true
-            runtime: io.containerd.kata.v2
+            #runtime: io.containerd.kata.v2
             volumes:
                     - "/docker/resolv.conf:/etc/resolv.conf"
                     - "/usr/local/tmp:/usr/local/tmp"
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:4.10.0a"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/wtf-standalone:5.1.0a"
             networks:
                     omgwtfbbq:
                             ipv4_address: 172.19.1.200
@@ -60,7 +60,7 @@ services:
             security_opt:
               - no-new-privileges:true
             runtime: io.containerd.kata.v2
-            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:15"
+            image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-stun:16"
             mem_limit: 128m
             volumes:
                     - "/docker/turnserver/turnserver.conf:/etc/turnserver.conf"
@@ -72,9 +72,10 @@ services:
     redis:
             restart: unless-stopped
             read_only: true
+            runtime: io.containerd.kata.v2
             security_opt:
               - no-new-privileges:true
-            runtime: runsc-kvm
+            #runtime: runsc-kvm
             image: "us-docker.pkg.dev/omgwtfbbq/gcr.io/alpine-redis:10"
             mem_limit: 256m
             networks:

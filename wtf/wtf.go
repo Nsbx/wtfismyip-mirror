@@ -599,6 +599,7 @@ func cleanHandle(w http.ResponseWriter, r *http.Request) {
 func wtfHandle(w http.ResponseWriter, r *http.Request) {
 	// Changing respones based on User-Agent surely must violate some fucking RFC
 	if strings.HasPrefix(r.Header.Get("user-agent"), "curl") || strings.HasPrefix(r.Header.Get("user-agent"), "HTTPie") {
+		w.Header().Set("X-Comment", "You got here because your User-Agent is curl")
 		text(w, r)
 	} else {
 		add := getAddress(r)
