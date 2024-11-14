@@ -24,6 +24,8 @@ import (
 	middlewarestd "github.com/slok/go-http-metrics/middleware/std"
 )
 
+const reverseDNSTimeout = 5 * time.Second
+
 var xffMode bool
 var cityReader *geoip2.Reader
 var orgReader *geoip2.Reader
@@ -291,23 +293,22 @@ func geoData(ip string) (location geoText) {
 
 func reverseDNS(ip string) (response string) {
 	omfg := make(chan string, 1)
+	ctx, cancel := context.WithTimeout(context.Background(), reverseDNSTimeout)
+	defer cancel()
+
 	go func() {
 		dnsName, err := net.LookupAddr(ip)
-		if err != nil {
+		if err != nil || len(dnsName) == 0 {
 			omfg <- ip
+			return
 		}
-		if len(dnsName) == 0 {
-			omfg <- ip
-		} else {
-			hostname := dnsName[0]
-			omfg <- hostname[0 : len(hostname)-1]
-		}
+		omfg <- strings.TrimSuffix(dnsName[0], ".")
 	}()
 
 	select {
 	case response = <-omfg:
 		return response
-	case <-time.After(5 * time.Second):
+	case <-ctx.Done():
 		return ip
 	}
 }
