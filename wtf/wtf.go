@@ -293,7 +293,7 @@ func geoData(ip string) (location geoText) {
 
 func reverseDNS(ip string) (response string) {
 	omfg := make(chan string, 1)
-	ctx, cancel := context.WithTimeout(context.Background(), reverseDNSTimeout)
+	ctx_r, cancel := context.WithTimeout(context.Background(), reverseDNSTimeout)
 	defer cancel()
 
 	go func() {
@@ -308,7 +308,7 @@ func reverseDNS(ip string) (response string) {
 	select {
 	case response = <-omfg:
 		return response
-	case <-ctx.Done():
+	case <-ctx_r.Done():
 		return ip
 	}
 }
