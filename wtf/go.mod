@@ -1,14 +1,14 @@
 module gitlab.com/wtfismyip/wtfismyip
 
-go 1.23.0
+go 1.23.3
 
 require (
 	github.com/caddyserver/certmagic v0.21.4
-	github.com/cyphar/filepath-securejoin v0.3.3
+	github.com/cyphar/filepath-securejoin v0.3.4
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gorilla/mux v1.8.1
 	github.com/oschwald/geoip2-golang v1.11.0
-	github.com/prometheus/client_golang v1.20.4
+	github.com/prometheus/client_golang v1.20.5
 	github.com/slok/go-http-metrics v0.13.0
 )
 

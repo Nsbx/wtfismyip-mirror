@@ -292,9 +292,10 @@ func geoData(ip string) (location geoText) {
 }
 
 func reverseDNS(ip string) (response string) {
-	omfg := make(chan string, 1)
 	ctx_r, cancel := context.WithTimeout(context.Background(), reverseDNSTimeout)
 	defer cancel()
+
+	omfg := make(chan string, 1)
 
 	go func() {
 		dnsName, err := net.LookupAddr(ip)
